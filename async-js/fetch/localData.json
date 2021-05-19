@@ -1,0 +1,11 @@
+{
+  "films": {
+    "Magnolia": 9,
+    "Raw": 7,
+    "Nomadland": 9
+  },
+  "shows": {
+    "Mad Men": 8,
+    "The Knick": 9
+  }
+}

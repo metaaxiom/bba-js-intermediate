@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Object Instances</title>
+</head>
+<body>
+  <script>
+
+    /* CREATE OBJECT LITERALS */
+    let literalObj = {
+      dataPiece1: "something1",
+      dataPiece2: "something2",
+    };
+    console.log("literalObj:", literalObj);
+
+    /*
+    If you intend to create multiple objects,
+    each with the same format (number and names of keys),
+    then - using literal object only - you have to always
+    repeat that same format
+    */
+    let car1 = {
+      make: "Ford",
+      model: "Focus",
+      year: 2003
+    };
+    console.log("My Car:", car1);
+
+    let car2 = {
+      make: "Subaru",
+      model: "Forester",
+      year: 2008
+    };
+    console.log("Friend's Car:", car2);
+
+    /*
+    There's a better way to create multiple objects of the same format.
+    That's done using INSTANCES.
+
+    When you create an object in this manner, you use capital names.
+
+    Defining an object using a function creates a "blueprint" / "format" for this object
+    */
+    // Car is a blueprint for what makes a car
+      // namely, the properties make, model, year
+    function Car(make, model, year){
+      // the "this" keyword refers to the current object we are in (Car)
+      this.make = make;
+      this.model = model;
+      this.year = year;
+    }
+    // create new INSTANCE of Car object
+    let car3 = new Car("Nissan", "Ultima", 2018);
+    console.log("Car 3:", car3);
+    let car4 = new Car("Mitsubishi", "Montero", 2020);
+    console.log("Car 4:", car4);
+
+  </script>
+</body>
+</html>
