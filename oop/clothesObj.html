@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothes Objections</title>
+</head>
+<body>
+  <script>
+  
+  class ClothingItem {
+    constructor(clothingType, brand, color, fabric, price, discount){
+      this.clothingType = clothingType;
+      this.brand = brand;
+      this.color = color;
+      this.fabric = fabric;
+      this.price = price;
+      this.discount = discount;
+    }
+
+    isDiscounted(){
+      if(this.discount == "0%" || this.discount == "0" || this.discount == 0){
+        return false;
+      }
+      return true;
+    }
+    
+    /*
+    finalPrice(){
+      // substract the discount value from item price and returns the result
+      return (this.price - (this.price * (parseInt(this.discount) / 100))).toFixed("2");
+    }
+    */
+    get finalPrice(){
+      return (this.price - (this.price * (parseInt(this._discount) / 100))).toFixed("2");
+    }
+
+    set discount(discountVal){
+      if(typeof discountVal == "number" && discountVal >= 0 && discountVal < 100){
+        // _ is blocking field, so that we don't accidentally cause recursion
+        this._discount = discountVal;
+        return;
+      }
+      console.log("Invalid discount value provided to the setter.");
+    }
+
+  }
+
+  let coolShirt1 = new ClothingItem('t-shirt', 'H&M', 'red', 'cotton', 12.99, 0);
+  console.log(coolShirt1.isDiscounted());
+  console.log("Whole coolShirt1 Object:", coolShirt1);
+
+  let coolShirt2 = new ClothingItem('t-shirt', 'GAP', 'gray', 'cotton', 16.99, 10);
+  console.log(coolShirt2);
+
+  console.log("coolShirt2 final price:", coolShirt2.finalPrice);
+  // running the setter
+  coolShirt2.discount = 20;
+  // running the getter
+  console.log(coolShirt2.finalPrice);
+
+  </script>
+</body>
+</html>

@@ -46,17 +46,27 @@
     */
     // Car is a blueprint for what makes a car
       // namely, the properties make, model, year
+    // CONSTRUCTOR (begins it constructs objects according to a "blueprint")
     function Car(make, model, year){
       // the "this" keyword refers to the current object we are in (Car)
       this.make = make;
       this.model = model;
       this.year = year;
+
+      this.drive = function(){
+        console.log("Driving...");
+      };
     }
-    // create new INSTANCE of Car object
+    // call the Car constructor in order to create a new INSTANCE of Car object
     let car3 = new Car("Nissan", "Ultima", 2018);
     console.log("Car 3:", car3);
+    console.log("Drive with Car 3:");
+    car3.drive();
+
     let car4 = new Car("Mitsubishi", "Montero", 2020);
     console.log("Car 4:", car4);
+
+
 
   </script>
 </body>

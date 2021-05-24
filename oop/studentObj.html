@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Object</title>
+</head>
+
+<body>
+    <script>
+        /* STUDENT OBJECTS */
+        function Student(firstName, lastName, age, coursesArr) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.coursesArr = coursesArr;
+
+            this.average = function (courseName) {
+                let gradeAvg = -1; // -1 indicates that gradeAvg hasn't been calculated
+
+                this.coursesArr.filter(course => course.name == courseName);
+
+                this.coursesArr.forEach(course => {
+                    if (course.name == courseName) {
+                        let gradeSum = course.grades.reduce((sum, currGrade) => {
+                            return sum + currGrade;
+                        });
+                        gradeAvg = gradeSum / course.grades.length;
+                        return true;
+                    }
+                });
+
+                return gradeAvg;
+            };
+
+            // -------HOME WORK---------
+
+            this.passing = function (courseName) {
+                return this.average(courseName) >= 70;
+            }
+
+            this.addCourse = function(newCourseObj){
+                this.coursesArr.push(newCourseObj);
+            }
+
+            // this.passing = grade => grade < 70;
+
+            // this.passing = grade => grade.filter(p => p > 70);
+
+
+
+        };
+
+        let Adam = new Student("Adam", "Smith", 25, [
+            {
+                name: "Biology",
+                grades: [98, 95, 90, 88, 91, 78]
+            },
+            {
+                name: "Calculus",
+                grades: [85, 82, 77, 65, 66, 80]
+            }
+        ])
+
+        let Roberts = new Student("Roberts", "Luka", 27, [
+            {
+                name: "Biology",
+                grades: [88, 89, 95, 79, 99, 96]
+            },
+            {
+                name: "Chemistry",
+                grades: [88, 85, 93, 95, 80, 97]
+            }
+        ])
+
+
+        console.log(Adam);
+        console.log(Adam.average("Biology"));
+        
+        console.log(Adam.passing("Biology"));
+
+        console.log("Roberts' Chemistry average:", Roberts.average("Chemistry"));
+        console.log("Is Roberts passing Chemistry?", Roberts.passing("Chemistry"));
+        
+        Roberts.addCourse({ name: "Philosophy", grades: [98, 56, 99] });
+        console.log(Roberts);
+
+    </script>
+</body>
+
+</html>
