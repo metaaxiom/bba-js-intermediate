@@ -32,3 +32,12 @@ Create a new class called Library. Give it an array field which contains Book ob
 Add a addBook setter to add more Book objects into the library.
 
 Create a method which will print out all the book titles alphabeticlally.
+
+
+## 5/25
+
+Create a new class called Turtle that inherits from class Animal and provides some new properties / methods that are specific to turtles.
+
+### BONUS
+
+Create a class called AnimalList to which you can add Objects of the Animal type. Add a method called printAnimals to this class, which prints out all the animals in alphabetical order (based on the individualName).

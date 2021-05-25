@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Book {
+            constructor(title, author, genre, publisher, year, rating, synopsis) {
+                this.title = this.validateTitle(title) ? title : String(title);
+                this.author = author;
+                this.genre = genre;
+                this.publisher = publisher;
+                
+                if(this.validateYearOfPublication(year)){
+                    this.year = year;
+                }else{
+                    throw 'Invalid year of publication.';
+                }
+                
+                this.rating = rating;
+                this.synopsis = synopsis;
+            }
+
+            
+            validateTitle(title){
+                return typeof title == "string" 
+            }
+            validateYearOfPublication(year) {
+                if (year <= 0) {
+                    return false;
+                }
+                return true;
+            }
+
+            // GET author name + synopsis
+
+            get bio() {
+                // return "Author:" + " " + `${this.author}` + " " + "Synopsis:" + " " + `${this.synopsis}`;
+                // return "Author: " + this.author + " Synopsis: " + this.synopsis;
+                return `Author: ${this.author}\n\nSynposis: ${this.synopsis}.`;
+            }
+
+            get title(){
+                return this._title;
+            }
+            set title(title){
+                this._title = this.validateTitle(title) ? title : String(title);
+            }
+
+        }
+
+        let book1 = null;
+        try {
+            book1 = new Book('A Casdfytunticle For Leibowitz', 'Walter M. Miller Jr.', 'post-apocalyptic, science fiction', 'J. B. Lippincott & Co.', 1960, 4.5, 'Set in a Catholic monastery in the desert lands of the Southwestern US after a catastrophic nuclear war, the novel spans the thousands of years it takes for civilization to rebuild itself. It is the chosen duty of the monks of the fictional Albertian Order of Leibowitz to preserve the remnants of humanity\'s scientific knowledge, in expectation of the day the world will again be ready for it. The novel is based on the author\'s own experiences during WW2. He was involved in the allied bombing of the ancient Roman Catholic monastery at Monte Cassino, which led to its destruction. Told in a three parts \("Fiat Homo", "Fiat Lux", and "Fiat Voluntas Tua"\) the structure reflects the origins of the novel as three individual stories published in science fiction magazines. A Canticle for Leibowitz won the Hugo Award for Best Novel in 1961.')
+        }catch(error){
+            console.log("There was an error:", error);
+        }
+
+        if(book1 != null){
+            // get
+            //console.log(book1.validate);
+            console.log(book1)
+            console.log(book1.bio)
+
+            book1.title = 'A Canticle For Leibowitz';
+            console.log(book1.title);
+        }
+
+
+        let book2 = null;
+        try {
+            book2 = new Book('Ishmael', 'Daniel Quinn', 'Philosophical novel', 'Bantam/Turner Books', -1992, 4.7, 'Opens with the narrator reading the newspaper and finding himself both disgruntled and intrigued by a personal advertisement. The ad indicates that a teacher is looking for a student interested in saving the world. For most of the narrator\'s early life, he had searched for such a teacher, and he\'s angry that only now is one looking for him. He\'s sure the ad is a hoax, but he goes to the indicated address, only to find an empty office space with a gorilla in one of the rooms, looking at him through a glass pane. The gorilla is able to speak with the narrator telepathically, and the narrator quickly realizes that this is the teacher he\'s been searching for.')
+        }catch(error){
+            console.log("There was an error:", error);
+        }
+
+        if(book2 != null){
+            console.log(book2);
+            console.log(book2.bio);
+        }
+
+        
+
+
+    </script>
+</body>
+
+</html>
