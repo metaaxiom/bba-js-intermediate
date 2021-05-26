@@ -41,3 +41,20 @@ Create a new class called Turtle that inherits from class Animal and provides so
 ### BONUS
 
 Create a class called AnimalList to which you can add Objects of the Animal type. Add a method called printAnimals to this class, which prints out all the animals in alphabetical order (based on the individualName).
+
+
+## 5/26
+
+* Divide all the classes that we wrote into individual files (then export / import them as modules).
+
+* Write an implementation of the stack data structure using a class
+  * class MyStack { ... }
+  * push (already exists on array)
+  * pop (already exists on array)
+  * peek: method that retrieves the element at the top of the stack (without popping / removing it)
+
+* Write an implementation of the queue data structure using a class
+  * class MyQueue { ... }
+  * queue: add element to the back
+  * dequeue: remove an element from the front
+  * peek: method that retrieves the element at the front of the queue (without dequeing it)
