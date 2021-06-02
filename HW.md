@@ -75,3 +75,8 @@ Create a class called AnimalList to which you can add Objects of the Animal type
 5. Practice all the topics we've went over that are available on freeCodeCamp.org
 
 BONUS: Implement a linked-list data structure.
+
+## 5/28
+
+* Finish Tic-Tac-Toe
+  * In the future, build a scoreboard for it, which stores the data in a MySQL DB.

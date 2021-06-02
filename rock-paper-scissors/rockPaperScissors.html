@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Rock, Paper, Scissors</title>
+
+</head>
+
+
+<body>
+
+    <audio src="./assets/audio/Sounds_WHOOSH.WAV"></audio>
+
+    <header class="header">
+        <div class="content">
+            <h2 class="text_shadows">Rock Paper Scissors</h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="game-container">
+            <div class="score-board-container">
+                <div>
+                    <h6>Player</h6>
+                    <div class="board player1">
+                        <p id="player-score">88</p>
+                    </div>
+                </div>
+                <div>
+                    <h6>Cpu</h6>
+                    <div class="board cpu">
+                        <p id="cpu-score">88</p>
+                    </div>
+                </div>
+            </div>
+            <div class="game">
+                <button id="rockBtn" class="choiceBtns" value="rock"><img src="./assets/images/rock.gif"
+                        alt=""></button>
+                <button id="paperBtn" class="choiceBtns" value="paper"><img src="./assets/images/paper.gif"
+                        alt=""></button>
+                <button id="scissorsBtn" class="choiceBtns" value="scissors"><img src="./assets/images/scissors.gif"
+                        alt=""></button>
+            </div>
+            <div id="result-container">
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <img src="./assets/images/rockPaperScissorsShoot.gif" class="footer-logo">
+        <nav>
+            <ol>
+                <li><a href="">Game</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Page</a></li>
+            </ol>
+        </nav>
+        <audio src="./assets/audio/Sounds_WHOOSH.WAV"></audio>
+    </footer>
+
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
